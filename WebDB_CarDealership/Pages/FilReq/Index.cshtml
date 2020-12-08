@@ -1,0 +1,77 @@
+﻿@page
+@model WebDB_CarDealership.Pages.FilReq.IndexModel
+@{
+    ViewData["Title"] = "Список запросов и фильтров";
+}
+<div class="accordion" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Запросы
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+            <a asp-area="" asp-page="Request/PerDep" class="text-dark">Отдел кадров</a><br />
+            <a asp-area="" asp-page="Request/CatalogAuto" class="text-dark">Каталог автомобилей</a><br />
+            <a asp-area="" asp-page="Request/ListOrder" class="text-dark">Список заказов</a><br />
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed text-dark" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Фильтры
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <form>
+                    Отобразить сотрудников по должностям:
+                    <select class="form-control-sm" asp-items="Model.SelPosition" name="id">
+                        <option value="-1">не выбрано</option>
+                    </select>
+                    <button asp-area="" asp-page="Filter/FilterPosition" class="btn btn-primary">Отфильтровать</button>
+                </form>
+                <br />
+                <form>
+                    Отобразить автомобили по производителю:
+                    <select class="form-control-sm" asp-items="Model.SelManuf">
+                        <option value="-1">не выбрано</option>
+                    </select>
+                    <button asp-area="" asp-page="Filter/FilterPosition" class="btn btn-primary">Отфильтровать</button>
+                </form>
+                <br />
+                <form>
+                    Отобразить автомобили по типам кузова:
+                    <select class="form-control-sm" asp-items="Model.SelBT">
+                        <option value="-1">не выбрано</option>
+                    </select>
+                    <button asp-area="" asp-page="Filter/FilterBodyType" class="btn btn-primary">Отфильтровать</button>
+                </form>
+                <br />
+                <form>
+                    Отобразить заказы по метке об выполнении:
+                    <select class="form-control-sm" asp-items="Model.SelMarkCompletion">
+                        <option value="-1">не выбрано</option>
+                    </select>
+                    <button asp-area="" asp-page="Filter/FilteMarkCompletion" class="btn btn-primary">Отфильтровать</button>
+                </form>
+                <br />
+                <form>
+                    Отобразить заказы по метке об оплате:
+                    <select class="form-control-sm" asp-items="Model.SelMarkPay">
+                        <option value="-1">не выбрано</option>
+                    </select>
+                    <button asp-area="" asp-page="Filter/FilteMarkPrice" class="btn btn-primary">Отфильтровать</button>
+                </form>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>

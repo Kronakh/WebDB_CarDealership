@@ -2,3 +2,34 @@
 @model WebDB_CarDealership.Pages.FilReq.Request.ListOrderModel
 @{
 }
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].Auto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].Staff)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Customers)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Auto.NumBody)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Staff.FullName)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

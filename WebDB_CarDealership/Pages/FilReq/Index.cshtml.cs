@@ -31,6 +31,28 @@ namespace WebDB_CarDealership.Pages.FilReq
                                       Value = p.ID.ToString(),
                                       Text = p.Name
                                   }).ToList();
+            SelManuf = _context.Manufacturers.Select(p =>
+                                  new SelectListItem
+                                  {
+                                      Value = p.ID.ToString(),
+                                      Text = p.Name
+                                  }).ToList();
+            SelBT = _context.BodyType.Select(p =>
+                                  new SelectListItem
+                                  {
+                                      Value = p.ID.ToString(),
+                                      Text = p.Name
+                                  }).ToList();
+            SelMarkCompletion = new List<SelectListItem>
+                        {
+                           new SelectListItem{ Value = "True", Text = "Выполнено"},
+                           new SelectListItem{ Value = "False", Text = "Не выполнено"}
+                        };
+            SelMarkPay = new List<SelectListItem>
+                        {
+                           new SelectListItem{ Value = "True", Text = "Оплачено"},
+                           new SelectListItem{ Value = "False", Text = "Не оплачено"}
+                        };
 
         }
     }

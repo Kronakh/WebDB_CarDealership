@@ -2,3 +2,29 @@
 @model WebDB_CarDealership.Pages.FilReq.Filter.FilterBrandModel
 @{
 }
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].NumBody)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].Manuf)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Auto)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumBody)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manuf.Name)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

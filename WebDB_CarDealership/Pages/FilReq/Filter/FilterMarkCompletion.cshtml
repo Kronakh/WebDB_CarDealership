@@ -2,3 +2,28 @@
 @model WebDB_CarDealership.Pages.FilReq.Filter.FilterMarkCompletionModel
 @{
 }
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].MarkCompletion)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Customers)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MarkCompletion)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

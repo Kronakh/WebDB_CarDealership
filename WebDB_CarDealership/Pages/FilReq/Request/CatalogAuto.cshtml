@@ -2,3 +2,40 @@
 @model WebDB_CarDealership.Pages.FilReq.Request.CatalogAutoModel
 @{
 }
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].NumBody)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].Manuf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].BT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].Staff)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Auto)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumBody)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manuf.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BT.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Staff.FullName)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

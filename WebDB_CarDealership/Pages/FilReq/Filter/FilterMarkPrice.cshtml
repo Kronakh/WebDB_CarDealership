@@ -2,3 +2,28 @@
 @model WebDB_CarDealership.Pages.FilReq.Filter.FilterMarkPriceModel
 @{
 }
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].MarkPrice)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Customers)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MarkPrice)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
